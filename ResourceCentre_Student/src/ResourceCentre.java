@@ -143,8 +143,12 @@ public class ResourceCentre {
 		System.out.println(output);
 	}
 
+	
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
+		
+		
 		String output = "";
+
 		// write your code here
 		for (int i = 0; i < chromebookList.size(); i++) {
 
@@ -152,13 +156,14 @@ public class ResourceCentre {
 					chromebookList.get(i).getDescription(), 
 					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
+		}
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		ResourceCentre.setHeader("CHROMEBOOK LIST");
-		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
-				"AVAILABLE", "DUE DATE","OPERATING SYSTEM");
-		output = retrieveAllChromebook(chromebookList);
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION", "AVAILABLE", "DUE DATE","OPERATING SYSTEM");
+		 output += retrieveAllChromebook(chromebookList);	
+
 		System.out.println(output);
 	}
 
@@ -183,15 +188,15 @@ public class ResourceCentre {
 		// write your code here
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
-		int os = Helper.readInt("Enter operating system > ");
+		String os = Helper.readString("Enter operating system > ");
 
-		Chromebook cb= new Chromebook(tag, description, os);
-		return cb;
+		Chromebook cb1 = new Chromebook(tag, description, os);
+		return cb1 ;
 		
 	}	
-	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
+	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb1) {
 		// write your code here
-		chromebookList.add(cb);
+		chromebookList.add(cb1);
 		System.out.println("Chromebook added");
 	}
 	

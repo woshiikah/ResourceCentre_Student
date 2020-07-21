@@ -72,7 +72,7 @@ public class ResourceCentreTest {
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
-		//test if the list of camcorders retrieved from the SourceCentre is empty
+		//test if the list of Camcorders retrieved from the SourceCentre is empty
 				String allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
 				String testOutput = "";
 				assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
@@ -96,25 +96,27 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		// Test if Item list is not null but empty, so that can add a new item
+
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		
-		//test if the list of camcorders retrieved from the SourceCentre is empty
+		//test if the list of Chromebook retrieved from the SourceCentre is empty
 				String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 				String testOutput = "";
-				assertEquals("Check that ViewAllChromebooklist", testOutput, allCamcorder);
+				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 				
 		//Given an empty list, after adding 2 items, test if the size of the list is 2
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
 		
-		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
+		//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
 		allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "ASUS Chromebook ", "Win 10", "", 40);
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0022", "HP Chromebook", "Win 10", "", 20);
 	
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+
 	}
 
 	@Test
